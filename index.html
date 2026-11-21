@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>حسابیار — نرم‌افزار حسابداری فارسی</title>
+<meta name="description" content="حسابیار: نرم‌افزار حسابداری و مدیریت مالی فارسی تحت وب با دستیار هوشمند، تقویم شمسی و ریال/تومان.">
+<meta property="og:title" content="حسابیار — نرم‌افزار حسابداری فارسی">
+<meta property="og:description" content="حسابداری دوبل، فروش و انبار، حقوق، تولید، پیمانکاری، فروش حضوری و دستیار هوشمند فارسی.">
+<meta property="og:image" content="https://dariush-tech.github.io/hesabyar-showcase/docs/preview.jpg">
+<meta name="theme-color" content="#0b1630">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.3/Vazirmatn-font-face.css">
+<style>
+:root{
+  --navy:#0b1630; --navy-2:#13234a; --ink:#0f172a; --muted:#5b6478; --line:#e5e8ef;
+  --bg:#f6f7fb; --card:#fff; --blue:#1d4ed8; --blue-soft:#e8eefc; --green:#15803d;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Vazirmatn,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;background:rgba(11,22,48,.92);backdrop-filter:blur(10px);color:#fff}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;text-decoration:none}
+.logo{width:34px;height:34px;border-radius:10px;background:var(--blue);display:grid;place-items:center;font-weight:800}
+.nav{display:flex;gap:22px;font-size:15px}
+.nav a{text-decoration:none;opacity:.8}
+.nav a:hover{opacity:1}
+
+/* hero */
+.hero{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;padding:72px 0 0;overflow:hidden}
+.hero h1{font-size:clamp(34px,6vw,56px);line-height:1.25;margin:0 0 14px;font-weight:800;letter-spacing:-.5px}
+.hero p.lead{font-size:clamp(17px,2.2vw,20px);max-width:640px;opacity:.85;margin:0 0 28px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px}
+.chip{border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:4px 14px;font-size:14px;opacity:.9}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:56px}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:12px;padding:12px 22px;font:600 16px Vazirmatn,sans-serif;text-decoration:none;border:0;cursor:pointer}
+.btn.primary{background:var(--blue);color:#fff}
+.btn.ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.18)}
+.hero-shot{border-radius:18px 18px 0 0;box-shadow:0 -10px 60px rgba(0,0,0,.35);margin:0 auto;max-width:min(1100px,100%)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:-1px auto 0;padding:34px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.stat b{display:block;font-size:26px;font-weight:800;color:var(--blue)}
+.stat span{color:var(--muted);font-size:14px}
+
+/* sections */
+section{padding:56px 0}
+h2{font-size:clamp(26px,3.4vw,34px);margin:0 0 8px;font-weight:800}
+.sub{color:var(--muted);margin:0 0 30px;max-width:680px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.feat{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.feat .ic{width:42px;height:42px;border-radius:12px;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;margin-bottom:12px}
+.feat h3{margin:0 0 8px;font-size:18px}
+.feat ul{margin:0;padding:0 18px 0 0;color:var(--muted);font-size:15px}
+.feat li{margin:3px 0}
+
+/* gallery */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.tab{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 16px;font:500 14px Vazirmatn,sans-serif;cursor:pointer;color:var(--ink)}
+.tab[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.shot{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;cursor:zoom-in;padding:0;text-align:right;font-family:inherit;color:inherit}
+.shot img{aspect-ratio:1600/1012;object-fit:cover;object-position:top;width:100%;border-bottom:1px solid var(--line)}
+.shot div{padding:12px 16px;font-weight:600;font-size:15px}
+.shot small{display:block;color:var(--muted);font-weight:400;font-size:13px}
+.shot[hidden]{display:none}
+
+/* mobile */
+.mobile{background:var(--navy);color:#fff;border-radius:28px;padding:44px;display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:center}
+.mobile .sub{color:rgba(255,255,255,.75)}
+.phones{display:flex;gap:18px;justify-content:center}
+.phones img{width:min(44%,240px);border-radius:28px;border:8px solid #1e293b;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.mobile ul{padding:0 18px 0 0;margin:0;opacity:.85}
+
+/* tech */
+.tech{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.tech .feat p{margin:0;color:var(--muted);font-size:15px}
+
+footer{border-top:1px solid var(--line);padding:30px 0 40px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(6,10,22,.92);display:none;align-items:center;justify-content:center;z-index:50;padding:56px 16px 16px}
+.lb.open{display:flex}
+.lb img{max-height:100%;max-width:100%;border-radius:12px}
+.lb .x{position:absolute;top:12px;left:16px;background:none;border:0;color:#fff;font-size:30px;cursor:pointer}
+.lb .cap{position:absolute;top:16px;right:20px;color:#fff;font-weight:600}
+
+@media (max-width:900px){
+  .grid,.gallery{grid-template-columns:repeat(2,1fr)}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .mobile{grid-template-columns:1fr;padding:30px 22px}
+  .nav{display:none}
+}
+@media (max-width:560px){
+  .grid,.gallery,.tech{grid-template-columns:1fr}
+  .hero{padding-top:44px}
+  .wrap{padding:0 16px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#"><span class="logo">ح</span>حسابیار</a>
+    <nav class="nav">
+      <a href="#features">امکانات</a>
+      <a href="#gallery">تصاویر</a>
+      <a href="#mobile">موبایل</a>
+      <a href="#tech">فناوری</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>حسابداری فارسی،<br>ساده برای مدیر، دقیق برای حسابدار</h1>
+    <p class="lead">نرم‌افزار حسابداری و مدیریت مالی تحت وب برای کسب‌وکارهای ایرانی: از فاکتور و انبار تا حقوق، تولید و پیمانکاری، با دستیار هوشمندی که فارسی حرف می‌زند.</p>
+    <div class="chips">
+      <span class="chip">تقویم شمسی</span><span class="chip">ریال و تومان</span><span class="chip">راست‌به‌چپ</span>
+      <span class="chip">موبایل و دسکتاپ</span><span class="chip">حالت تاریک</span>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="#gallery">مشاهدهٔ تصاویر</a>
+      <a class="btn ghost" href="#features">امکانات</a>
+    </div>
+    <img class="hero-shot" src="screenshots/dashboard.jpg" alt="داشبورد حسابیار" width="1600" height="1012">
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><b>۲۰+</b><span>ماژول و گزارش مالی</span></div>
+    <div class="stat"><b>۸۷</b><span>آزمون خودکار روی دیتابیس واقعی</span></div>
+    <div class="stat"><b>۶</b><span>نقش کاربری با مجوز جدا</span></div>
+    <div class="stat"><b>۱۰۰٪</b><span>فارسی و راست‌به‌چپ</span></div>
+  </div>
+</div>
+
+<section id="features">
+  <div class="wrap">
+    <h2>امکانات</h2>
+    <p class="sub">هر عدد در گزارش‌ها از سندهای قطعی می‌آید و هر تغییر در رد حسابرسی ثبت می‌شود: چه کسی، چه وقت، چه چیزی.</p>
+    <div class="grid">
+      <div class="feat"><div class="ic">◆</div><h3>هستهٔ حسابداری</h3><ul>
+        <li>حسابداری دوبل با کدینگ گروه، کل، معین و تفصیلی</li>
+        <li>سند قطعی تغییرناپذیر؛ اصلاح فقط با سند معکوس</li>
+        <li>دوره‌های مالی و بستن سال با انتقال سود</li>
+        <li>تراز آزمایشی، سود و زیان، ترازنامه، دفتر حساب</li></ul></div>
+      <div class="feat"><div class="ic">▤</div><h3>فروش، خرید و انبار</h3><ul>
+        <li>فاکتور با تخفیف، ارزش افزوده و سقف اعتبار</li>
+        <li>برگشت از فروش و خرید و پس‌دادن وجه</li>
+        <li>موجودی لحظه‌ای، میانگین موزون، کارت کالا</li>
+        <li>هشدار نقطهٔ سفارش</li></ul></div>
+      <div class="feat"><div class="ic">▣</div><h3>فروش حضوری</h3><ul>
+        <li>بارکدخوان و جست‌وجوی سریع کالا</li>
+        <li>پرداخت ترکیبی نقد و کارت، محاسبهٔ بقیهٔ پول</li>
+        <li>رسید ۸۰ میلی‌متری</li>
+        <li>خلاصهٔ فروش روز</li></ul></div>
+      <div class="feat"><div class="ic">₪</div><h3>خزانه، حقوق و دارایی</h3><ul>
+        <li>چک دریافتی و پرداختی و مغایرت‌گیری بانکی</li>
+        <li>پیش‌بینی نقدینگی</li>
+        <li>حقوق و دستمزد با بیمه، مالیات و فیش</li>
+        <li>دارایی ثابت و استهلاک ماهانه</li></ul></div>
+      <div class="feat"><div class="ic">⚙</div><h3>تولید و پیمانکاری</h3><ul>
+        <li>فرمول ساخت، دستور تولید و ضایعات</li>
+        <li>جذب دستمزد و سربار، بهای تمام‌شده</li>
+        <li>صورت‌وضعیت و کسورات قانونی</li>
+        <li>پیش‌پرداخت، سپرده‌ها و سود هر پیمان</li></ul></div>
+      <div class="feat"><div class="ic">✦</div><h3>هوشمندی و اتوماسیون</h3><ul>
+        <li>دستیار فارسی: ثبت فاکتور با گفتگو، فقط با تأیید شما</li>
+        <li>ثبت فاکتور خرید از عکس، PDF یا Excel</li>
+        <li>قاعده‌های خودکار با زمان‌بندی شمسی و اعلان</li>
+        <li>اتصال WooCommerce، کلید API، خروجی Excel</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" style="padding-top:20px">
+  <div class="wrap">
+    <h2>تصاویر</h2>
+    <p class="sub">همهٔ تصاویر از خود برنامه و با دادهٔ نمونه گرفته شده‌اند. برای بزرگ‌نمایی روی هر تصویر بزنید.</p>
+    <div class="tabs" role="group" aria-label="فیلتر تصاویر">
+      <button class="tab" data-f="all" aria-pressed="true">همه</button>
+      <button class="tab" data-f="sales" aria-pressed="false">فروش و انبار</button>
+      <button class="tab" data-f="reports" aria-pressed="false">گزارش‌ها</button>
+      <button class="tab" data-f="modules" aria-pressed="false">ماژول‌های تخصصی</button>
+      <button class="tab" data-f="auto" aria-pressed="false">اتوماسیون و اتصال</button>
+    </div>
+    <div class="gallery" id="g"></div>
+  </div>
+</section>
+
+<section id="mobile">
+  <div class="wrap">
+    <div class="mobile">
+      <div>
+        <h2>روی گوشی هم کامل</h2>
+        <p class="sub">همهٔ بخش‌ها روی موبایل کار می‌کنند؛ بدون نسخهٔ جدا و بدون اسکرول افقی.</p>
+        <ul><li>نوار پایین برای دسترسی سریع</li><li>ثبت فروش و فاکتور با یک دست</li><li>زنگ اعلان برای چک‌ها، کمبود موجودی و مطالبات</li></ul>
+      </div>
+      <div class="phones">
+        <img src="screenshots/mobile-dashboard.jpg" alt="داشبورد روی موبایل" loading="lazy" width="780" height="1688">
+        <img src="screenshots/mobile-pos.jpg" alt="فروش حضوری روی موبایل" loading="lazy" width="780" height="1688">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tech">
+  <div class="wrap">
+    <h2>فناوری و کیفیت</h2>
+    <p class="sub">برای پول ساخته شده: دقت اعشاری، کنترل در دیتابیس و آزمون برای هر سناریوی حساس.</p>
+    <div class="tech">
+      <div class="feat"><h3>سرور</h3><p>NestJS و TypeScript روی PostgreSQL. توازن سند و تغییرناپذیری با تریگر در خود دیتابیس کنترل می‌شود، نه فقط در برنامه.</p></div>
+      <div class="feat"><h3>رابط کاربری</h3><p>Next.js و Tailwind، کاملاً راست‌به‌چپ، حالت روشن و تاریک، جست‌وجوی سراسری و حالت «ساده» و «حسابدار».</p></div>
+      <div class="feat"><h3>امنیت</h3><p>ورود دومرحله‌ای، ۶ نقش کاربری، جداسازی کامل شرکت‌ها، جلوگیری از ثبت تکراری و محدودیت نرخ درخواست.</p></div>
+      <div class="feat"><h3>آزمون</h3><p>۸۷ آزمون خودکار (هم‌زمانی، دسترسی، ارقام دستی‌محاسبه‌شده) و سناریوهای کامل مرورگر روی دسکتاپ و موبایل.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© ۲۰۲۶ Dariush Technology · کلیهٔ حقوق محفوظ است.</span>
+    <span>کد منبع خصوصی است · تصاویر با دادهٔ نمونه</span>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="نمایش تصویر">
+  <span class="cap" id="lbc"></span>
+  <button class="x" id="lbx" aria-label="بستن">×</button>
+  <img id="lbi" alt="">
+</div>
+
+<script>
+const shots = [
+  ['sale-form','ثبت فاکتور فروش','پیش‌نویس، تخفیف و مالیات','sales'],
+  ['sales-return','برگشت از فروش','برگشت جزئی و پس‌دادن وجه','sales'],
+  ['pos','فروش حضوری','بارکد، نقد و کارت، بقیهٔ پول','sales'],
+  ['invoice','جزئیات فاکتور','سند، دریافت‌ها و مانده','sales'],
+  ['profit-loss','سود و زیان','از سندهای قطعی، با خروجی Excel','reports'],
+  ['balance-sheet','ترازنامه','دارایی، بدهی و سرمایه','reports'],
+  ['year-end','بستن سال مالی','پیش‌نمایش و انتقال به سود انباشته','reports'],
+  ['dashboard-dark','حالت تاریک','داشبورد مدیر','reports'],
+  ['bank-reconcile','مغایرت بانکی','تطبیق خودکار با صورت‌حساب','modules'],
+  ['payroll','حقوق و دستمزد','بیمه، مالیات و پرداخت','modules'],
+  ['production','دستور تولید','مواد، دستمزد، سربار و ضایعات','modules'],
+  ['contract-statement','صورت‌وضعیت پیمان','کسورات و پیش‌پرداخت','modules'],
+  ['modules','ابزارهای تخصصی','همهٔ ماژول‌ها در یک جا','modules'],
+  ['automations','استودیوی اتوماسیون','قاعده‌های فعال و تاریخچه','auto'],
+  ['automation-editor','ساخت قاعده','چه وقت، اگر، چه کاری','auto'],
+  ['woocommerce','اتصال WooCommerce','سفارش‌های فروشگاه اینترنتی','auto'],
+  ['two-factor','ورود دومرحله‌ای','Google Authenticator و کد بازیابی','auto'],
+];
+const g = document.getElementById('g');
+g.innerHTML = shots.map(([f,t,s,c]) =>
+  `<button class="shot" data-c="${c}" data-src="screenshots/${f}.jpg" data-t="${t}">
+     <img src="screenshots/${f}.jpg" alt="${t}" loading="lazy" width="1600" height="1012">
+     <div>${t}<small>${s}</small></div></button>`).join('');
+document.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.tab').forEach(x => x.setAttribute('aria-pressed', x === b));
+  g.querySelectorAll('.shot').forEach(s => s.hidden = b.dataset.f !== 'all' && s.dataset.c !== b.dataset.f);
+}));
+const lb = document.getElementById('lb'), lbi = document.getElementById('lbi'), lbc = document.getElementById('lbc');
+const close = () => { lb.classList.remove('open'); lbi.src = ''; };
+g.addEventListener('click', e => { const s = e.target.closest('.shot'); if (!s) return;
+  lbi.src = s.dataset.src; lbi.alt = s.dataset.t; lbc.textContent = s.dataset.t; lb.classList.add('open'); });
+lb.addEventListener('click', e => { if (e.target !== lbi) close(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+</script>
+</body>
+</html>
